@@ -6,12 +6,12 @@ Chatbot berbasis Google Gemini AI dengan antarmuka web sederhana dan modern.
 
 ## Fitur
 
-- 💬 Chat interaktif dengan Gemini AI
-- 🧠 Menyimpan riwayat percakapan
-- 🎨 Antarmuka modern dan responsif
-- 📝 Markdown rendering untuk format response yang rapi
+- Chat interaktif dengan Gemini AI
+- Menyimpan riwayat percakapan
+- Antarmuka modern dan responsif
+- Markdown rendering untuk format response yang rapi
 - 🇮🇩 Respon dalam Bahasa Indonesia
-- 💻 Syntax highlighting untuk code blocks
+- Syntax highlighting untuk code blocks
 
 ## Instalasi
 
@@ -45,7 +45,7 @@ Server akan berjalan di `http://localhost:3000`
 
 ## Keamanan
 
-⚠️ **PENTING**: Jangan pernah commit file `.env` ke repository public!
+**PENTING**: Jangan pernah commit file `.env` ke repository public!
 - File `.env` sudah ada di `.gitignore`
 - Gunakan `.env.example` sebagai template
 
