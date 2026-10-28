@@ -1,13 +1,17 @@
 # Gemini AI Chatbot
 
-Chatbot berbasis Google Gemini AI dengan antarmuka web sederhana.
+Chatbot berbasis Google Gemini AI dengan antarmuka web sederhana dan modern.
+
+![Gemini Chatbot Demo](screenshots/demo.png)
 
 ## Fitur
 
 - 💬 Chat interaktif dengan Gemini AI
 - 🧠 Menyimpan riwayat percakapan
 - 🎨 Antarmuka modern dan responsif
+- 📝 Markdown rendering untuk format response yang rapi
 - 🇮🇩 Respon dalam Bahasa Indonesia
+- 💻 Syntax highlighting untuk code blocks
 
 ## Instalasi
 
@@ -35,8 +39,9 @@ Server akan berjalan di `http://localhost:3000`
 ## Teknologi
 
 - **Backend**: Node.js, Express
-- **AI**: Google Gemini API
+- **AI**: Google Gemini API (gemini-2.5-flash)
 - **Frontend**: Vanilla JavaScript, HTML5, CSS3
+- **Markdown**: Marked.js untuk rendering format
 
 ## Keamanan
 

@@ -34,13 +34,15 @@ h1 {
   padding: 8px 12px;
   border-radius: 20px;
   max-width: 80%;
-  display: inline-block;
+  display: block;
+  clear: both;
+  word-wrap: break-word;
 }
 
 .message.user {
   background-color: #d1e7ff;
   float: right;
-  text-align: right;
+  text-align: left;
 }
 
 .message.bot {
@@ -74,4 +76,54 @@ button {
 
 button:hover {
   background-color: #0b5ed7;
+}
+
+.message pre {
+  background-color: #2d2d2d;
+  color: #f8f8f2;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto;
+  margin: 10px 0;
+}
+
+.message code {
+  background-color: #f4f4f4;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+}
+
+.message pre code {
+  background-color: transparent;
+  padding: 0;
+  color: #f8f8f2;
+}
+
+.message table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.message table th,
+.message table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.message table th {
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.message h1, .message h2, .message h3 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.message ul, .message ol {
+  margin-left: 20px;
 }

@@ -31,7 +31,11 @@ form.addEventListener('submit', async function (e) {
     const data = await response.json();
     const botReply = data.result || 'Sorry, no response received.';
 
-    botMessageElement.textContent = botReply;
+    if (typeof marked !== 'undefined') {
+      botMessageElement.innerHTML = marked.parse(botReply);
+    } else {
+      botMessageElement.textContent = botReply;
+    }
 
     if (data.result) {
       conversationHistory.push({ role: 'model', text: botReply });
@@ -45,7 +49,13 @@ form.addEventListener('submit', async function (e) {
 function appendMessage(sender, text) {
   const msg = document.createElement('div');
   msg.classList.add('message', sender);
-  msg.textContent = text;
+  
+  if (sender === 'bot' && typeof marked !== 'undefined') {
+    msg.innerHTML = marked.parse(text);
+  } else {
+    msg.textContent = text;
+  }
+  
   chatBox.appendChild(msg);
   chatBox.scrollTop = chatBox.scrollHeight;
   return msg;
