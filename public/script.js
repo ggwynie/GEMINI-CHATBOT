@@ -2,7 +2,6 @@ const form = document.getElementById('chat-form');
 const input = document.getElementById('user-input');
 const chatBox = document.getElementById('chat-box');
 
-// Array untuk menyimpan riwayat percakapan
 let conversationHistory = [];
 
 form.addEventListener('submit', async function (e) {
@@ -14,14 +13,11 @@ form.addEventListener('submit', async function (e) {
   appendMessage('user', userMessage);
   input.value = '';
 
-  // Tambahkan pesan user ke riwayat
   conversationHistory.push({ role: 'user', text: userMessage });
 
-  // Tampilkan pesan "Thinking..." sementara
   const botMessageElement = appendMessage('bot', 'Thinking...');
 
   try {
-    // Kirim pesan user ke backend Node.js / Express
     const response = await fetch('/api/chat', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -35,10 +31,8 @@ form.addEventListener('submit', async function (e) {
     const data = await response.json();
     const botReply = data.result || 'Sorry, no response received.';
 
-    // Ganti teks "Thinking..." dengan balasan dari AI
     botMessageElement.textContent = botReply;
 
-    // Simpan balasan AI ke riwayat percakapan agar AI ingat obrolan sebelumnya
     if (data.result) {
       conversationHistory.push({ role: 'model', text: botReply });
     }
@@ -54,5 +48,5 @@ function appendMessage(sender, text) {
   msg.textContent = text;
   chatBox.appendChild(msg);
   chatBox.scrollTop = chatBox.scrollHeight;
-  return msg; // Kembalikan elemen DOM agar teksnya bisa kita update nanti
+  return msg;
 }

@@ -11,11 +11,8 @@ const GEMINI_MODEL = "gemini-2.5-flash";
 
 app.use(cors());
 app.use(express.json());
-
-// Sajikan file statis (HTML, CSS, JS) dari folder "public"
 app.use(express.static('public'));
 
-// --- Jalur API diletakkan SEBELUM app.listen ---
 app.post('/api/chat', async (req, res) => {
   const { conversation } = req.body;
   try {
@@ -40,6 +37,5 @@ app.post('/api/chat', async (req, res) => {
   }
 });
 
-// --- app.listen HARUS di paling bawah ---
 const PORT = 3000;
 app.listen(PORT, () => console.log(`Server ready on http://localhost:${PORT}`));
